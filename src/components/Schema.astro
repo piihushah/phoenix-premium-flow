@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const siteUrl = "https://phoenixwebstudio.com";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Phoenix Web Studio",
+      url: siteUrl,
+      logo: `${siteUrl}/logo.png`,
+      email: "contact@phoenixwebstudio.com",
+      areaServed: "Australia",
+      founder: {
+        "@type": "Person",
+        name: "Priya Shah",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Phoenix Web Studio",
+      description,
+      publisher: {
+        "@id": `${siteUrl}/#organization`,
+      },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#service`,
+      name: "Phoenix Web Studio",
+      url: siteUrl,
+      description,
+      serviceType: [
+        "Website Design",
+        "Frontend Development",
+        "Landing Page Design",
+        "Website Audits",
+        "Performance Optimization",
+        "Website Maintenance",
+      ],
+      areaServed: {
+        "@type": "Place",
+        name: "Australia",
+      },
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -1,0 +1,25 @@
+---
+interface Props {
+  ga4?: string;
+}
+
+const { ga4 = "" } = Astro.props;
+const ga4Valid = ga4.trim().length > 0;
+---
+
+{ga4Valid && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4}`}></script>
+
+    <script is:inline define:vars={{ ga4 }}>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        window.dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", ga4);
+    </script>
+  </>
+)}

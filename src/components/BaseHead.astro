@@ -1,0 +1,37 @@
+---
+import Analytics from "@components/Analytics.astro";
+import SocialMeta from "@components/SocialMeta.astro";
+import Schema from "@components/Schema.astro";
+
+interface Props {
+  name: string;
+  title?: string;
+  description?: string;
+  logo?: string;
+  favicon?: string;
+  ga4?: string;
+  gsc?: string;
+}
+
+const {
+  title = "Phoenix Web Studio",
+  description = "Modern business websites by Phoenix Web Studio.",
+  favicon = "/favicon.png",
+  ga4 = "",
+  gsc = "",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content={description} />
+<meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={canonicalURL} />
+{gsc && <meta name="google-site-verification" content={gsc} />}
+<link rel="icon" href={favicon} />
+<title>{title}</title>
+<Schema title={title} description={description} />
+<SocialMeta title={title} description={description} image="/favicon.png" />
+<Analytics ga4={ga4} />
