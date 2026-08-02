@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import cafeImage from "@images/cafe.jpg";
+import Button from "@components/Button.astro";
+---
+
+<div class="px-6 md:px-0 py-8">
+  <div class="mx-auto grid overflow-hidden rounded-none shadow-sm
+           lg:grid-cols-2">
+    <!-- Cafe image -->
+    <div class="relative min-h-80 lg:min-h-115">
+      <Image
+        src={cafeImage}
+        alt="Warm and welcoming cafe interior"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+
+    <!-- Story content -->
+    <div class="relative flex items-center overflow-hidden px-8 py-14
+             md:px-12 lg:px-16">
+      <!-- Decorative leaf -->
+      <Icon
+        name="mdi:sprout-outline"
+        aria-hidden="true"
+        class="pointer-events-none absolute -right-8 bottom-4
+               h-72 w-72 rotate-[-12deg] text-[#c9ad8d]/45"
+      />
+
+      <div class="relative z-10 max-w-xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.18em]
+                 text-[#b4773a]">Our Story</p>
+
+        <h2 class="text-4xl leading-tight text-[#2b211b]
+                 md:text-5xl">
+          Rooted in Community,
+          <br />
+          Inspired by Coffee.
+        </h2>
+
+        <p class="mt-6 max-w-lg leading-7 text-[#5d534c]">
+          Aurora Cafe began with a simple idea: bring people together over exceptional coffee and genuine hospitality.
+          We partner with ethical farms, support local makers, and create a space where everyone feels at home.
+        </p>
+
+        <!-- Replace with your button component -->
+        <div class="mt-8">
+          <Button text="Learn More" buttonClass="primaryButton" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

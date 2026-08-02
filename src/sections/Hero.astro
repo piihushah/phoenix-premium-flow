@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+import heroImage from "@images/hero.jpg";
+import Button from "@components/Button.astro";
+---
+
+<div class="relative min-h-162.5 w-full bg-cover bg-center" style={`background-image: url('${heroImage.src}');`}>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/55"></div>
+
+  <!-- Hero content -->
+  <div class="relative z-10 mx-auto flex min-h-162.5 max-w-7xl items-center px-6 py-20 md:px-10 lg:px-16">
+    <div class="max-w-2xl text-white">
+      <h1 class="font-serif text-5xl font-semibold leading-tight md:text-6xl lg:text-7xl">Good Coffee.</h1>
+
+      <h2 class="mb-6 font-serif text-5xl font-semibold leading-tight md:text-6xl lg:text-7xl">Bright Moments.</h2>
+
+      <p class="mb-2 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
+        Thoughtfully sourced beans, crafted with care.
+      </p>
+
+      <p class="mb-8 max-w-xl text-base leading-relaxed text-white/90 md:text-lg">
+        Your neighbourhood cafe for everyday escapes.
+      </p>
+
+      <!-- Replace this with your Button component -->
+      <Button text="View Our Menu ->" buttonClass="primaryButton" />
+
+      <!-- Feature icons -->
+      <div class="flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:gap-8 mt-8">
+        <div class="flex items-center gap-3">
+          <Icon name="mdi:leaf" class="h-7 w-7 shrink-0" aria-hidden="true" />
+          <p class="text-sm font-medium md:text-base">Sustainably Sourced</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <Icon name="mdi:coffee-outline" class="h-7 w-7 shrink-0" aria-hidden="true" />
+          <p class="text-sm font-medium md:text-base">Expertly Crafted</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <Icon name="mdi:heart-outline" class="h-7 w-7 shrink-0" aria-hidden="true" />
+          <p class="text-sm font-medium md:text-base">Made with Love</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

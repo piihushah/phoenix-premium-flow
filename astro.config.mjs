@@ -2,14 +2,19 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://phoenixwebstudio.com",
+  site: "https://www.phoenixpremiumclear.com.au",
 
   image: {
     service: {
       entrypoint: "astro/assets/services/sharp",
     },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 
   integrations: [

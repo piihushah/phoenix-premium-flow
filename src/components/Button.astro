@@ -1,0 +1,40 @@
+---
+interface Props {
+  type?: "submit" | "reset" | "button" | null | undefined;
+  text?: string; // Ensure this is correctly typed
+  link?: string | "#contact";
+  newTab?: boolean | true;
+  buttonClass: "primaryButton" | "secondaryButton" | "ctaButton";
+  icon?: string;
+  styling?: string;
+}
+
+const { type, text, link, newTab, buttonClass, icon, styling } = Astro.props;
+
+const buttonStyles = {
+  primaryButton:
+    "capitalize rounded-xl px-5 py-2.5 text-lg text-center font-semibold me-2 mb-2 text-white bg-[#aa7239] border border-[#aa7239] focus:ring-4 focus:outline-none shadow-xl hover:cursor-pointer hover:bg-[#572c06] transition-colors duration-300 w-full md:w-fit hover:scale-105",
+  secondaryButton:
+    "capitalize rounded-xl px-5 py-2.5 text-lg text-center font-semibold me-2 mb-2 text-[#aa7239] bg-white border border-[#aa7239] focus:ring-4 focus:outline-none shadow-xl hover:cursor-pointer hover:bg-[#aa7239] hover:text-white hover:scale-105 transition-colors duration-300 w-full md:w-fit",
+  ctaButton:
+    "capitalize rounded-xl px-5 py-2.5 text-lg text-center font-semibold me-2 mb-2 text-[#aa7239] bg-blue-100 shadow-lg hover:bg-blue-200 hover:text-blue-800 flex items-center justify-center space-x-2 transition-colors duration-300 hover:cursor-pointer",
+};
+
+const computedClass = `${buttonStyles[buttonClass]} ${styling || ""}`;
+---
+
+{
+  type === "submit" || type === "reset" ? (
+    <button type={type} class={`${computedClass} flex items-center justify-center space-x-2`}>
+      {text}
+    </button>
+  ) : (
+    <a
+      href={link}
+      class={`${computedClass} flex items-center justify-center space-x-2`}
+      target={newTab ? "_blank" : "_self"}
+    >
+      {text}
+    </a>
+  )
+}

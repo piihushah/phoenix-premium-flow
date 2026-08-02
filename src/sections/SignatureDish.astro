@@ -1,0 +1,51 @@
+---
+import signatureDishData from "@data/signatureDish";
+import Button from "@components/Button.astro";
+import { Image } from "astro:assets";
+---
+
+<div class="px-6 py-16">
+  <div class="mx-auto max-w-7xl">
+    <p class="text-center text-sm font-bold uppercase tracking-widest text-[#aa7239]">Our Featured Menu</p>
+
+    <h2 class="mb-10 mt-2 text-center font-serif text-3xl font-bold text-slate-950 md:text-4xl">
+      Our Signature Dishes
+    </h2>
+
+    <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        signatureDishData.map((item) => (
+          <article
+            class="group overflow-hidden rounded-2xl border border-[#eee8df]
+                   bg-white p-3 shadow-md transition duration-300
+                   hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div class="overflow-hidden rounded-xl">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={400}
+                height={300}
+                class="aspect-4/3 w-full object-cover transition duration-500
+                       group-hover:scale-105"
+              />
+            </div>
+
+            <div class="flex min-h-37.5 flex-col items-center px-3 py-4 text-center">
+              <h3 class="font-serif text-xl font-bold text-[#241a14]">{item.title}</h3>
+
+              <p class="mt-1 max-w-xs text-sm leading-5 text-slate-600">{item.description}</p>
+
+              <p class="mt-auto pt-4 text-lg font-bold text-[#b66f27]">{item.price}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Replace this with your Button component -->
+    <div class="mt-8 flex justify-center">
+      <Button text="View Our Full Menu ->" buttonClass="primaryButton" />
+    </div>
+  </div>
+</div>
