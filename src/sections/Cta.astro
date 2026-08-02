@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import coffeeImage from "@images/hero.jpg";
+---
+
+<div class="relative overflow-hidden bg-[#143c2a] px-6 py-10">
+  <!-- Decorative background leaves -->
+  <div class="pointer-events-none absolute -left-8 top-0 text-white/10" aria-hidden="true">
+    <svg width="250" height="150" viewBox="0 0 250 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10 135C65 95 93 40 160 14M64 94C41 79 25 58 13 33M98 61C80 44 72 26 70 7M132 34C120 23 116 13 117 2"
+        stroke="currentColor"
+        stroke-width="2"></path>
+    </svg>
+  </div>
+
+  <div class="pointer-events-none absolute -right-8 bottom-0 rotate-180 text-white/10" aria-hidden="true">
+    <svg width="250" height="150" viewBox="0 0 250 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10 135C65 95 93 40 160 14M64 94C41 79 25 58 13 33M98 61C80 44 72 26 70 7M132 34C120 23 116 13 117 2"
+        stroke="currentColor"
+        stroke-width="2"></path>
+    </svg>
+  </div>
+
+  <div
+    class="relative mx-auto grid max-w-7xl items-center gap-8
+           md:grid-cols-[240px_1fr] lg:grid-cols-[260px_1fr]"
+  >
+    <!-- Coffee image -->
+    <div class="flex justify-center">
+      <Image src={coffeeImage} alt="Cup of coffee" class="w-52 object-contain md:w-60 md:h-60 rounded-full" />
+    </div>
+
+    <div class="grid items-center gap-8 lg:grid-cols-[1fr_1.2fr]">
+      <!-- Text -->
+      <div class="text-center lg:text-left">
+        <h2 class="font-serif text-4xl text-white">Stay in the Loop</h2>
+
+        <p class="mt-2 max-w-md text-sm leading-6 text-white/80">
+          Be the first to know about new drinks, events, and special offers.
+        </p>
+      </div>
+
+      <!-- Newsletter form -->
+      <form class="flex w-full flex-col overflow-hidden rounded-xl border
+               border-white/25 sm:flex-row">
+        <label for="newsletter-email" class="sr-only"> Email address </label>
+
+        <input
+          id="newsletter-email"
+          name="email"
+          type="email"
+          required
+          placeholder="Enter your email"
+          class="min-w-0 flex-1 bg-transparent px-5 py-4 text-white
+                 outline-none placeholder:text-white/60"
+        />
+
+        <button
+          type="submit"
+          class="bg-[#c9863e] px-8 py-4 font-semibold text-white
+                 transition hover:bg-[#ad6f32]"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

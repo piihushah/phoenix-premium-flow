@@ -1,0 +1,98 @@
+---
+import { Icon } from "astro-icon/components";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#191919] px-6 py-10 text-white">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3">
+          <Icon name="mdi:white-balance-sunny" class="size-7 text-[#bd7e38]" />
+
+          <p class="font-serif text-3xl">Aurora Cafe</p>
+        </div>
+
+        <p class="mt-4 max-w-xs text-sm leading-6 text-white/70">
+          Good coffee. Bright moments.
+          <br />
+          Every day.
+        </p>
+
+        <div class="mt-5 flex items-center gap-4">
+          <a href="#" aria-label="Instagram" class="text-white/75 transition hover:text-[#c9863e]">
+            <Icon name="mdi:instagram" class="size-5" />
+          </a>
+
+          <a href="#" aria-label="Facebook" class="text-white/75 transition hover:text-[#c9863e]">
+            <Icon name="mdi:facebook" class="size-5" />
+          </a>
+
+          <a href="#" aria-label="TikTok" class="text-white/75 transition hover:text-[#c9863e]">
+            <Icon name="mdi:music-note" class="size-5" />
+          </a>
+
+          <a href="#" aria-label="Website" class="text-white/75 transition hover:text-[#c9863e]">
+            <Icon name="mdi:web" class="size-5" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h3 class="font-semibold text-white">Quick Links</h3>
+
+        <nav class="mt-4 flex flex-col gap-2 text-sm text-white/70">
+          <a href="/" class="transition hover:text-[#c9863e]">Home</a>
+          <a href="/menu" class="transition hover:text-[#c9863e]">Menu</a>
+          <a href="/about" class="transition hover:text-[#c9863e]">About</a>
+          <a href="/gallery" class="transition hover:text-[#c9863e]">Gallery</a>
+          <a href="/contact" class="transition hover:text-[#c9863e]">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Menu -->
+      <div>
+        <h3 class="font-semibold text-white">Menu</h3>
+
+        <nav class="mt-4 flex flex-col gap-2 text-sm text-white/70">
+          <a href="/menu#coffee" class="transition hover:text-[#c9863e]"> Coffee </a>
+
+          <a href="/menu#tea" class="transition hover:text-[#c9863e]"> Tea & More </a>
+
+          <a href="/menu#pastries" class="transition hover:text-[#c9863e]"> Pastries </a>
+
+          <a href="/menu#bowls" class="transition hover:text-[#c9863e]"> Bowls </a>
+
+          <a href="/merch" class="transition hover:text-[#c9863e]"> Merch </a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-semibold text-white">Contact</h3>
+
+        <address class="mt-4 not-italic text-sm leading-7 text-white/70">
+          <a href="mailto:hello@auroracafe.com" class="transition hover:text-[#c9863e]"> hello@auroracafe.com </a>
+
+          <br />
+
+          <a href="tel:+15035550198" class="transition hover:text-[#c9863e]"> (503) 555-0198 </a>
+
+          <br />
+
+          123 Maple Street
+          <br />
+          Portland, OR 97201
+        </address>
+      </div>
+    </div>
+
+    <div class="mt-10 border-t border-white/10 pt-6 text-center
+             text-sm text-white/55">
+      © {currentYear} Aurora Cafe. All rights reserved.
+    </div>
+  </div>
+</footer>

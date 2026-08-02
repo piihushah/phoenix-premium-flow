@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="border-b border-[#e7dccd] bg-[#fbf7f1] px-6 py-8">
+  <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-3 md:divide-x md:divide-[#dccbb7]">
+    <!-- Visit us -->
+    <div class="flex items-start gap-5 md:px-8">
+      <div class="flex size-14 shrink-0 items-center justify-center rounded-full
+               bg-[#173d2b] text-white">
+        <Icon name="mdi:map-marker-outline" class="size-7" />
+      </div>
+
+      <div>
+        <h3 class="font-serif text-xl font-semibold text-[#2a201a]">Visit Us</h3>
+
+        <p class="mt-1 text-sm leading-5 text-[#5f554d]">
+          123 Maple Street
+          <br />
+          Portland, OR 97201
+        </p>
+
+        <a
+          href="https://maps.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-3 inline-flex items-center gap-2 text-sm font-semibold
+                 text-[#b87836] transition hover:text-[#8c5727]"
+        >
+          Get Directions
+          <Icon name="mdi:arrow-right" class="size-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Opening hours -->
+    <div class="flex items-start gap-5 md:px-8">
+      <div class="flex size-14 shrink-0 items-center justify-center rounded-full
+               bg-[#173d2b] text-white">
+        <Icon name="mdi:clock-outline" class="size-7" />
+      </div>
+
+      <div class="flex-1">
+        <h3 class="font-serif text-xl font-semibold text-[#2a201a]">Opening Hours</h3>
+
+        <div class="mt-2 grid grid-cols-[auto_1fr] gap-x-5 text-sm text-[#5f554d]">
+          <span>Mon – Fri</span>
+          <span>7:00 AM – 6:00 PM</span>
+
+          <span>Sat – Sun</span>
+          <span>8:00 AM – 6:00 PM</span>
+        </div>
+
+        <p class="mt-3 text-sm font-semibold text-[#b87836]">Open Daily</p>
+      </div>
+    </div>
+
+    <!-- Order online -->
+    <div class="flex items-start gap-5 md:px-8">
+      <div class="flex size-14 shrink-0 items-center justify-center rounded-full
+               bg-[#173d2b] text-white">
+        <Icon name="mdi:coffee-to-go-outline" class="size-7" />
+      </div>
+
+      <div>
+        <h3 class="font-serif text-xl font-semibold text-[#2a201a]">Order Online</h3>
+
+        <p class="mt-1 text-sm leading-5 text-[#5f554d]">
+          Skip the line and
+          <br />
+          order ahead.
+        </p>
+
+        <a
+          href="/order"
+          class="mt-3 inline-flex items-center gap-2 text-sm font-semibold
+                 text-[#b87836] transition hover:text-[#8c5727]"
+        >
+          Order Now
+          <Icon name="mdi:arrow-right" class="size-4" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

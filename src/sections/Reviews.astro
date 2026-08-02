@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon/components";
+import reviews from "@data/reviews.ts";
+---
+
+<div id="reviews" class="px-6 py-16">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-12 text-center">
+      <p class="text-sm font-bold uppercase tracking-widest text-blue-600">
+        Customer Reviews
+      </p>
+
+      <h2 class="mt-2 text-3xl font-bold text-slate-950 md:text-4xl">
+        What Our Customers Say
+      </h2>
+
+      <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+        Friendly service, reliable cleaning and results our customers can enjoy.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {
+        reviews.map((review) => (
+          <article
+            class="flex h-full flex-col rounded-2xl border border-slate-200
+                   bg-white p-6 shadow-sm transition duration-300
+                   hover:-translate-y-1 hover:shadow-lg"
+          >
+            <!-- Stars -->
+            <div
+              class="flex gap-1 text-amber-400"
+              aria-label={`${review.rating} out of 5 stars`}
+            >
+              {
+                Array.from({ length: review.rating }).map(() => (
+                  <Icon
+                    name="mdi:star"
+                    class="size-5"
+                    aria-hidden="true"
+                  />
+                ))
+              }
+            </div>
+
+            <!-- Review -->
+            <blockquote class="mt-5 flex-1 leading-7 text-slate-600">
+              “{review.review}”
+            </blockquote>
+
+            <!-- Customer -->
+            <div class="mt-6 flex items-center gap-4 border-t border-slate-100 pt-5">
+              <div
+                class="flex size-12 shrink-0 items-center justify-center
+                       rounded-full bg-blue-100 font-bold text-blue-700"
+                aria-hidden="true"
+              >
+                {review.initials}
+              </div>
+
+              <div>
+                <p class="font-bold text-slate-900">
+                  {review.name}
+                </p>
+
+                <p class="text-sm text-slate-500">
+                  {review.role}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</div>
