@@ -4,12 +4,12 @@ import heroImage from "@images/hero.jpg";
 import Button from "@components/Button.astro";
 ---
 
-<div class="relative min-h-162.5 w-full bg-cover bg-center" style={`background-image: url('${heroImage.src}');`}>
+<div class="relative min-h-225 w-full bg-cover bg-center" style={`background-image: url('${heroImage.src}');`}>
   <!-- Dark overlay -->
   <div class="absolute inset-0 bg-black/55"></div>
 
   <!-- Hero content -->
-  <div class="relative z-10 mx-auto flex min-h-162.5 max-w-7xl items-center px-6 py-20 md:px-10 lg:px-16">
+  <div class="relative z-10 mx-auto flex min-h-225 max-w-7xl items-center px-6 py-20 md:px-10 lg:px-16">
     <div class="max-w-2xl text-white">
       <h1 class="font-serif text-5xl font-semibold leading-tight md:text-6xl lg:text-7xl">Good Coffee.</h1>
 
@@ -24,7 +24,7 @@ import Button from "@components/Button.astro";
       </p>
 
       <!-- Replace this with your Button component -->
-      <Button text="View Our Menu ->" buttonClass="primaryButton" />
+      <Button text="View Our Menu" buttonClass="primaryButton" />
 
       <!-- Feature icons -->
       <div class="flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:gap-8 mt-8">

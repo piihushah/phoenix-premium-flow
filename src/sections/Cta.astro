@@ -1,27 +1,26 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import coffeeImage from "@images/hero.jpg";
 ---
 
 <div class="relative overflow-hidden bg-[#143c2a] px-6 py-10">
   <!-- Decorative background leaves -->
   <div class="pointer-events-none absolute -left-8 top-0 text-white/10" aria-hidden="true">
-    <svg width="250" height="150" viewBox="0 0 250 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M10 135C65 95 93 40 160 14M64 94C41 79 25 58 13 33M98 61C80 44 72 26 70 7M132 34C120 23 116 13 117 2"
-        stroke="currentColor"
-        stroke-width="2"></path>
-    </svg>
+    <Icon
+      name="mdi:plant-outline"
+      aria-hidden="true"
+      class="pointer-events-none absolute -left-12 -top-12
+         size-64 rotate-45 text-white/[0.07]"
+    />
   </div>
 
-  <div class="pointer-events-none absolute -right-8 bottom-0 rotate-180 text-white/10" aria-hidden="true">
-    <svg width="250" height="150" viewBox="0 0 250 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M10 135C65 95 93 40 160 14M64 94C41 79 25 58 13 33M98 61C80 44 72 26 70 7M132 34C120 23 116 13 117 2"
-        stroke="currentColor"
-        stroke-width="2"></path>
-    </svg>
-  </div>
+  <Icon
+    name="mdi:plant-outline"
+    aria-hidden="true"
+    class="pointer-events-none absolute -bottom-14 -right-12
+         size-64 -rotate-45 text-white/[0.07]"
+  />
 
   <div
     class="relative mx-auto grid max-w-7xl items-center gap-8
@@ -29,7 +28,10 @@ import coffeeImage from "@images/hero.jpg";
   >
     <!-- Coffee image -->
     <div class="flex justify-center">
-      <Image src={coffeeImage} alt="Cup of coffee" class="w-52 object-contain md:w-60 md:h-60 rounded-full" />
+      <div class="size-48 overflow-hidden rounded-full border-4 border-white/10
+           shadow-xl md:size-64">
+        <Image src={coffeeImage} alt="Cup of coffee" class="h-full w-full object-cover object-center" />
+      </div>
     </div>
 
     <div class="grid items-center gap-8 lg:grid-cols-[1fr_1.2fr]">

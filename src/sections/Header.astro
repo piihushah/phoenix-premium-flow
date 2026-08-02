@@ -1,0 +1,13 @@
+---
+import Logo from "@components/logo.astro";
+import Menu from "@components/menu.astro";
+import Button from "@components/Button.astro";
+---
+
+<header class="fixed top-0 left-0 z-50 w-full bg-black py-2 shadow-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
+    <Logo />
+    <Menu />
+    <Button text="Order Now" buttonClass="primaryButton" />
+  </div>
+</header>

@@ -1,0 +1,68 @@
+---
+import menuData from "@data/menu";
+import { Icon } from "astro-icon/components";
+---
+
+<nav class="relative z-50">
+  <div class="flex items-center justify-end">
+    <button id="navButton" type="button" class="text-[#aa7239] md:hidden" aria-label="Toggle navigation menu">
+      <Icon id="menuIcon" name="mdi:menu" class="size-7" />
+      <Icon id="closeIcon" name="mdi:close" class="hidden size-7" />
+    </button>
+
+    <ul
+      id="navMenu"
+      class="fixed inset-x-0 top-25 z-50 hidden bg-white px-6 py-6 shadow-xl md:static md:flex md:w-auto md:items-center md:space-x-6 md:bg-transparent md:p-0 md:shadow-none"
+    >
+      {
+        menuData.map((item) => (
+          <li>
+            <a
+              href={item.link}
+              class="block py-3 text-sm md:text-lg font-medium text-[#572c06] transition hover:text-[#aa7239] md:py-0 md:text-[#aa7239] md:hover:text-[#572c06]"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<script>
+  window.addEventListener("load", () => {
+    const navButton = document.getElementById("navButton");
+    const navMenu = document.getElementById("navMenu");
+    const menuIcon = document.getElementById("menuIcon");
+    const closeIcon = document.getElementById("closeIcon");
+
+    navButton?.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      navMenu?.classList.toggle("active");
+      menuIcon?.classList.toggle("hidden");
+      closeIcon?.classList.toggle("hidden");
+    });
+
+    navMenu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu?.classList.remove("active");
+        menuIcon?.classList.remove("hidden");
+        closeIcon?.classList.add("hidden");
+      });
+    });
+  });
+</script>
+
+<style>
+  #navMenu.active {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    #navMenu {
+      display: flex;
+    }
+  }
+</style>
